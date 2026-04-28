@@ -5,17 +5,19 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   useEffect(() => {
     console.log(localStorage.getItem("Bearer"), "inqyotes");
-    userMe().then((res) => {
-      console.log(res);
-      if (res.status == 200) {
-        setUser(res.data.email.split("@")[0]);
-        setIsLoggedIn(true);
-      }
-    });
+    userMe()
+      .then((res) => {
+        console.log(res);
+        if (res.status == 200) {
+          setUser(res.data.email.split("@")[0]);
+          setIsLoggedIn(true);
+        }
+      })
+      .catch(() => setIsLoggedIn(false));
   }, []);
 
   console.log(user, isLoggedIn);
@@ -25,3 +27,4 @@ export function AuthProvider({ children }) {
     </AuthContext>
   );
 }
+

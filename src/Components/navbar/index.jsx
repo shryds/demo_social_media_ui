@@ -21,7 +21,12 @@ function NavBar() {
           </NavLink>
           {isLoggedIn ? (
             <>
-              <NavLink className="nav-link">{user}</NavLink>
+              <NavLink className="nav-link" to="/post/create">
+                Create Post
+              </NavLink>
+              <NavLink className="nav-link" to="/me">
+                {user}
+              </NavLink>
               <NavLink className="nav-link" onClick={handleLogout}>
                 logout
               </NavLink>

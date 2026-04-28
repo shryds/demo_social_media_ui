@@ -11,4 +11,10 @@ export const ENDPOINTS = {
   allComments: (id) => `/post/${id}/comments/all`,
   userSignUp: "/user/",
   me: "/user/auth/me",
+  like: (id) => `/post/${id}/like`,
+  authAllPost: "/post/user/all",
+  CreatePost: "/post/",
+  CreateComment: (id) => `post/${id}/comment`,
+  userPosts: "user/posts/me",
+  userComments: "user/comments/me",
 };

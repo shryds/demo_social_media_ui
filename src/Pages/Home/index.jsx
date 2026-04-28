@@ -1,15 +1,12 @@
-import { getPosts } from "../../API/posts";
-import { useState, useEffect } from "react";
+import { addLike, authGetPosts, getPosts, removeLike } from "../../API/posts";
+import { useState, useEffect, useContext } from "react";
 import { Post } from "../../Components/Post";
 import "./home.css";
 import { Link } from "react-router-dom";
-import PostDetail from "../postdetail";
+import { AuthContext } from "../../Context/Auth";
 
 function HomePage() {
-  const [post, setPost] = useState([]);
-  useEffect(() => {
-    getPosts().then((res) => setPost(res));
-  }, []);
+  
   return post.length === 0 ? (
     <>
       <div className="post-list">
@@ -27,7 +24,7 @@ function HomePage() {
               to={`/post/${n.id}`}
               style={{ textDecoration: "none" }}
             >
-              <Post post={n} />
+              <Post post={n} handleLike={handleLike} />
             </Link>
           );
         })}

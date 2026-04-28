@@ -7,6 +7,8 @@ import PostDetail from "./Pages/postdetail/index.jsx";
 import Layout from "./Components/layout/index.jsx";
 import { AuthProvider } from "./Context/Auth.jsx";
 import LoginSignUpPage from "./Pages/loginsignup/index.jsx";
+import CreatePost from "./Pages/createPost/index.jsx";
+import UserProfile from "./Pages/userProfile/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
       { path: "/post/:id", element: <PostDetail /> },
       { path: "/user/login", element: <LoginSignUpPage /> },
       { path: "/user/", element: <LoginSignUpPage isSignUp={true} /> },
+      { path: "/post/create", element: <CreatePost /> },
+      { path: "/me", element: <UserProfile /> },
     ],
   },
 ]);

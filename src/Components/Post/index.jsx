@@ -1,6 +1,9 @@
+import { useState } from "react";
+import { addLike, removeLike } from "../../API/posts";
 import "./post.css";
 
-export function Post({ post }) {
+export function Post({ post, handleLike }) {
+
   return (
     <div className="post-card">
       <div className="post-card__header">
@@ -13,7 +16,10 @@ export function Post({ post }) {
       <div className="post-card__content">{post.content}</div>
 
       <div className="post-card__footer">
-        <span className="post-card__likes">
+        <span
+          className="post-card__likes"
+          onClick={(e) => handleLike(e, post.id)}
+        >
           <span className="post-card__likes-icon">♥</span>
           {post.likes} likes
         </span>
