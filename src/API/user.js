@@ -18,9 +18,9 @@ export const userMe = async () => {
 };
 export const userPosts = async () => {
   const res = await axios.getInstance().get(ENDPOINTS.userPosts);
-  return res;
+  return res.data;
 };
 export const userComments = async () => {
   const res = await axios.getInstance().get(ENDPOINTS.userComments);
-  return res;
+  return res.data;
 };

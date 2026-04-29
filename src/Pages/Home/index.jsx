@@ -4,9 +4,11 @@ import { Post } from "../../Components/Post";
 import "./home.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Auth";
+import { PostContext } from "../../Context/Post";
 
 function HomePage() {
-  
+  const { post,setPost, handleLike } = useContext(PostContext);
+
   return post.length === 0 ? (
     <>
       <div className="post-list">
@@ -24,7 +26,7 @@ function HomePage() {
               to={`/post/${n.id}`}
               style={{ textDecoration: "none" }}
             >
-              <Post post={n} handleLike={handleLike} />
+              <Post post={n} handleLike={(e, id) => handleLike(e, id, post,setPost)} />
             </Link>
           );
         })}
