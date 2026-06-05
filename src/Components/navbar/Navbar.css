@@ -1,44 +1,40 @@
-/* Navbar.css */
-
 .navbar {
-  background-color: #333;
-  padding: 12px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 1.5rem;
 }
 
-/* Container for proper alignment */
 .nav-container {
   display: flex;
-  justify-content: space-between;  /* pushes logo left, links right */
+  justify-content: space-between;
   align-items: center;
 }
 
-/* Logo */
 .logo {
-  color: white;
   margin: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
 }
 
-/* Links container */
 .nav-links {
   display: flex;
-  gap: 25px;   /* 🔥 clean spacing between links */
+  gap: 1.25rem;
+  align-items: center;
 }
 
-/* Individual link */
 .nav-link {
-  color: white;
+  color: var(--muted);
   text-decoration: none;
-  font-size: 16px;
-  transition: 0.2s;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.15s;
 }
 
-/* Hover effect */
 .nav-link:hover {
-  color: #00d4ff;
+  color: var(--text);
 }
 
-/* Active link (React Router auto adds this) */
 .nav-link.active {
-  color: yellow;
-  font-weight: bold;
+  color: var(--accent);
+  font-weight: 600;
 }

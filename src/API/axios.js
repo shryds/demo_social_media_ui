@@ -2,7 +2,6 @@ import axios from "axios";
 import { BASE_URL } from "../CONFIGS/api";
 
 const getInstance = (baseURL = BASE_URL) => {
-  console.log("Using baseURL:", baseURL);
   return axios.create({
     baseURL,
     headers: {

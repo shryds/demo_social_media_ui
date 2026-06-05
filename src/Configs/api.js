@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:1311";
+export const BASE_URL = " http://localhost:1311/";
 
 export const DEPLOYED_URL = window.location.origin;
 
@@ -15,6 +15,8 @@ export const ENDPOINTS = {
   authAllPost: "/post/user/all",
   CreatePost: "/post/",
   CreateComment: (id) => `post/${id}/comment`,
+  deletePost: (id) => `/post/${id}`,
+  deleteComment: (commentId) => `/post/comment/${commentId}`,
   userPosts: "user/posts/me",
   userComments: "user/comments/me",
 };

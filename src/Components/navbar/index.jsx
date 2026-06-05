@@ -4,39 +4,41 @@ import { useContext } from "react";
 import { AuthContext } from "../../Context/Auth";
 
 function NavBar() {
-  const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { user, setUser, setEmail, isLoggedIn, setIsLoggedIn } =
+    useContext(AuthContext);
   function handleLogout() {
     localStorage.removeItem("Bearer");
     setUser("");
+    setEmail("");
     setIsLoggedIn(false);
   }
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <h2 className="logo">MyApp</h2>
+    <nav className='navbar'>
+      <div className='nav-container'>
+        <h2 className='logo'>DemoSocial</h2>
 
-        <div className="nav-links">
-          <NavLink to="/" className="nav-link">
+        <div className='nav-links'>
+          <NavLink to='/' className='nav-link'>
             Home
           </NavLink>
           {isLoggedIn ? (
             <>
-              <NavLink className="nav-link" to="/post/create">
+              <NavLink className='nav-link' to='/post/create'>
                 Create Post
               </NavLink>
-              <NavLink className="nav-link" to="/me">
+              <NavLink className='nav-link' to='/me'>
                 {user}
               </NavLink>
-              <NavLink className="nav-link" onClick={handleLogout}>
+              <NavLink className='nav-link' onClick={handleLogout}>
                 logout
               </NavLink>
             </>
           ) : (
             <>
-              <NavLink to="/user/login" className="nav-link">
+              <NavLink to='/user/login' className='nav-link'>
                 Login
               </NavLink>
-              <NavLink to="/user" className="nav-link">
+              <NavLink to='/user' className='nav-link'>
                 Signup
               </NavLink>
             </>

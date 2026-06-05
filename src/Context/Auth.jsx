@@ -5,24 +5,28 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   useEffect(() => {
-    console.log(localStorage.getItem("Bearer"), "inqyotes");
     userMe()
       .then((res) => {
-        console.log(res);
         if (res.status == 200) {
           setUser(res.data.email.split("@")[0]);
+          setEmail(res.data.email);
           setIsLoggedIn(true);
         }
       })
-      .catch(() => setIsLoggedIn(false));
+      .catch((err) => {
+        console.error("Failed to verify session:", err);
+        setIsLoggedIn(false);
+      });
   }, []);
 
-  console.log(user, isLoggedIn);
   return (
-    <AuthContext value={{ user, setUser, isLoggedIn, setIsLoggedIn }}>
+    <AuthContext
+      value={{ user, email, setUser, setEmail, isLoggedIn, setIsLoggedIn }}
+    >
       {children}
     </AuthContext>
   );

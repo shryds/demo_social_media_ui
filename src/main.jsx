@@ -10,6 +10,7 @@ import LoginSignUpPage from "./Pages/loginsignup/index.jsx";
 import CreatePost from "./Pages/createPost/index.jsx";
 import UserProfile from "./Pages/userProfile/index.jsx";
 import { PostContext, PostProvider } from "./Context/Post.jsx";
+import { ToastProvider } from "./Context/Toast.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <PostProvider>
-        <RouterProvider router={router} />
-      </PostProvider>
-    </AuthProvider>
+    <ToastProvider>
+      <AuthProvider>
+        <PostProvider>
+          <RouterProvider router={router} />
+        </PostProvider>
+      </AuthProvider>
+    </ToastProvider>
   </StrictMode>,
 );
