@@ -1,4 +1,4 @@
-import { ENDPOINTS } from "../CONFIGS/api";
+import { ENDPOINTS } from "../Configs/api";
 import axios from "./axios";
 import { assertOk, reportError } from "./errorHandler";
 
