@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import HomePage from "./Pages/Home/index.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PostDetail from "./Pages/postdetail/index.jsx";
+import PostDetail from "./Pages/PostDetail/index.jsx";
 import Layout from "./Components/layout/index.jsx";
 import { AuthProvider } from "./Context/Auth.jsx";
 import LoginSignUpPage from "./Pages/loginsignup/index.jsx";
