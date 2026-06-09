@@ -1,4 +1,4 @@
-export const BASE_URL = " http://localhost:1311/";
+export const BASE_URL = "https://demo-social-media-application.onrender.com/";
 
 export const DEPLOYED_URL = window.location.origin;
 
