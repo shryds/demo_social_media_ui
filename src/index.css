@@ -205,8 +205,8 @@ button:active {
 .detail-card__image {
   display: block;
   width: 100%;
-  max-height: 420px;
-  object-fit: cover;
+
+  object-fit: contain;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   margin: 1rem 0;
