@@ -23,6 +23,9 @@ export const userLogin = async (payload) => {
 };
 
 export const userMe = async () => {
+  if (!localStorage.getItem("Bearer")){
+    throw new Error("not loggedin")
+  }
   const res = await axios.getInstance().get(ENDPOINTS.me);
   return res;
 };
