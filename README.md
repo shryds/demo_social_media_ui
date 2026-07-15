@@ -3,8 +3,6 @@
 The frontend for [demo_social_media_application](https://github.com/shryds/demo_social_media_application) 
 a responsive social media interface built with **React**, **Vite**, and **Axios**, deployed on Vercel.
 
-**Backend Repo:** [demo_social_media_application](https://github.com/shryds/demo_social_media_application)
-
 ---
 
 ## About
